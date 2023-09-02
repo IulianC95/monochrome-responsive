@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+.primary {
+  display: none;
+
+  @include media-breakpoint-up(lg) {
+    display: flex;
+    background: $text-primary;
+    padding: 15px;
+    ul {
+      display: flex;
+      justify-content: space-between;
+
+      width: 100%;
+
+      li {
+        font-weight: 100;
+        text-transform: uppercase;
+        font-size: 22px;
+        font-family: 'Playfair Display', sans-serif;
+      }
+    }
+  }
+}
+header {
+  margin-top: 14px;
+  @include media-breakpoint-up(lg) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .mobile-bg {
+    background: url('/images/background-mobile.png') no-repeat center center;
+    background-size: cover;
+    height: 177px;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-end;
+
+    button {
+      margin-right: 30px;
+      margin-bottom: 32px;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    background: url('/images/banner.png') no-repeat center center;
+    background-size: cover;
+    height: 500px;
+    margin-top: 0;
+  }
+}
+
+.header {
+  h1 {
+    text-transform: uppercase;
+    font-size: 24px;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  &-secondary {
+    display: flex;
+    justify-content: space-between;
+
+    @include media-breakpoint-up(lg) {
+      display: flex;
+      justify-content: space-around;
+      padding-top: 20px;
+    }
+  }
+
+  &-social {
+    display: none;
+    @include media-breakpoint-up(lg) {
+      display: flex;
+      ul {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+
+        li a {
+          font-size: 20px;
+          font-family: 'Playfair Display', sans-serif;
+        }
+      }
+    }
+  }
+
+  &-user {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    form {
+      display: none;
+    }
+
+    ul {
+      li a {
+        color: $black;
+        font-size: 20px;
+      }
+    }
+    @include media-breakpoint-up(lg) {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      gap: 10px;
+
+      form {
+        margin-left: auto;
+        position: relative;
+        display: flex;
+        grid-area: 1 / 1 / 2 / 3;
+        justify-self: end;
+        align-self: center;
+        align-items: center;
+        font-size: 16px;
+        color: $dark-gray;
+
+        input {
+          padding-left: 30px;
+          font-family: 'Roboto', sans-serif;
+        }
+        button {
+          position: absolute;
+          left: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          font-size: 20px;
+          color: $dark-gray;
+          background-color: transparent;
+          border: none;
+        }
+      }
+      ul {
+        display: flex;
+        flex-direction: row;
+        gap: 16px;
+
+        li a {
+          font-size: 30px;
+          color: $black;
+        }
+      }
+    }
+  }
+
+  &-user ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  &-search {
+    display: flex;
+    justify-content: space-between;
+
+    &-bg {
+      background: $text-primary;
+      display: grid;
+      grid-template: 1fr 1fr;
+
+      button:first-child[type='button'] {
+        grid-area: 1 / 1 / 2 / 2;
+        font-size: 30px;
+        justify-self: start;
+        background-color: transparent;
+        border: none;
+        color: $white;
+
+        @include media-breakpoint-up(lg) {
+          display: none;
+        }
+      }
+
+      form {
+        grid-area: 1 / 1 / 2 / 3;
+        justify-self: end;
+        align-self: center;
+        display: flex;
+        align-items: center;
+        font-size: 20px;
+        color: $dark-gray;
+        border: 1px solid $dark-gray;
+        padding: 0 16px;
+        width: 234px;
+
+        input {
+          border: none;
+          background: none;
+          color: $white;
+          outline: none;
+          font-size: 12px;
+          width: 100%;
+        }
+
+        input::placeholder {
+          color: $dark-gray;
+          text-transform: lowercase;
+          font-style: italic;
+        }
+
+        button:nth-child(2) {
+          font-size: 20px;
+          color: $dark-gray;
+          background-color: transparent;
+          border: none;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .header-search-bg {
+    background: none;
+  }
+}

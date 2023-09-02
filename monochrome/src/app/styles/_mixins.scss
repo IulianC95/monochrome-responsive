@@ -1,0 +1,45 @@
+// Definirea map-ului pentru punctele de întrerupere
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+);
+
+// Definirea mixin-ului
+@mixin media-breakpoint-up($breakpoint: sm) {
+  @if map-has-key($grid-breakpoints, $breakpoint) {
+    $breakpoint-value: map-get($grid-breakpoints, $breakpoint);
+
+    @media (min-width: $breakpoint-value) {
+      @content;
+    }
+  }
+}
+
+// Utilizarea mixin-ului
+.some-class {
+  color: blue;
+
+  @include media-breakpoint-up(sm) {
+    color: green;
+  }
+
+  @include media-breakpoint-up(md) {
+    color: yellow;
+  }
+
+  @include media-breakpoint-up(lg) {
+    color: orange;
+  }
+
+  @include media-breakpoint-up(xl) {
+    color: red;
+  }
+
+  @include media-breakpoint-up(xxl) {
+    color: purple;
+  }
+}

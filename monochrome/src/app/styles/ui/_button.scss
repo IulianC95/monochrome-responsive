@@ -1,0 +1,41 @@
+.button {
+  &-style-1 {
+    background: transparent;
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+
+    button {
+      padding: 4px 20px;
+      text-transform: uppercase;
+    }
+  }
+  &-style-2 {
+    text-transform: initial;
+    border: 1px solid $black;
+    width: 82px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    a {
+      text-decoration: none;
+      color: $black;
+    }
+  }
+  &-style-3 {
+    button {
+      padding: 4px 14px;
+      text-transform: uppercase;
+      width: 80px;
+      height: 30px;
+      text-align: center;
+    }
+  }
+  &-like {
+    img {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}

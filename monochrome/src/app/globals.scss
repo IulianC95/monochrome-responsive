@@ -1,0 +1,39 @@
+@import './styles/fonts';
+
+// import variables
+
+@import './styles/variables';
+
+@import './styles/mixins';
+
+// style guide import
+@import './styles/ui/index';
+
+// import common style
+
+@import './styles/common/index';
+
+@import '~bootstrap/scss/bootstrap-reboot';
+@import '~bootstrap/scss/bootstrap-grid';
+@import '~bootstrap/scss/bootstrap-utilities';
+@import '~bootstrap/scss/mixins';
+
+@import '@fortawesome/fontawesome-free/css/all.min.css';
+
+body {
+  font-size: 16px;
+  font-family: 'Playfair Display', serif;
+  color: $black;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: $white;
+}
